@@ -1,0 +1,123 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRM</title>
+
+    <!-- bootstrap 3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- title -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>CRM</h2>
+        </div>
+        <a style="margin-left: 1000px">group9 project</a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a style="margin-left: 1000px" href="login.html">login</a>
+        </div>
+        <div class="col-md-12">
+            <a style="margin-left: 1000px" href="register.html">regist</a>
+        </div>
+    </div>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Potential customers</a>
+        </div>
+
+
+    </nav>
+
+    <!-- table -->
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <tr>
+                    <th>#</th>
+                    <th>Customer Name</th>
+                    <th>Customer Phone</th>
+                    <th>Customer Email</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>customer1</th>
+                    <th>56576587</th>
+                    <th>customer1@gmail.com</th>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <th>customer2</th>
+                    <th>43546342</th>
+                    <th>customer2@gmail.com</th>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <th>customer3</th>
+                    <th>74632923</th>
+                    <th>customer3@gmail.com</th>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <th>customer4</th>
+                    <th>234827792</th>
+                    <th>customer4@gmail.com</th>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <th>customer5</th>
+                    <th>1493231</th>
+                    <th>customer5@gmail.com</th>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <th>customer6</th>
+                    <th>2897382675</th>
+                    <th>customer1@gmail.com6</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>
+<script>
+    $(function () {
+
+        var urlHead="http://localhost:8181/crm_war_exploded/"
+        var name=localStorage.username;
+        var data={
+            "username":name
+        }
+
+        $.ajax({
+            type:"POST",
+            url:urlHead+"company/show",
+            data: data,
+            success:function(res){
+                console.log(res)
+            }
+        })
+
+    })
+</script>

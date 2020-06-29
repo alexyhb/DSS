@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.caculateDao">
+    <insert id="addCaculate">
+        insert into caculate
+        (companyId,customerId,sacleScore,nationScore,quantityScore,totalScore)
+        VALUES
+        (#{companyId},#{customerId},#{sacleScore},#{nationScore},#{quantityScore},#{totalScore})
+    </insert>
+    <select id="getCaculate" parameterType="int" >Q
+
+        SELECT *
+        FROM caculate
+        WHERE companyId=(#{companyId})
+     </select>
+
+
+
+</mapper>
